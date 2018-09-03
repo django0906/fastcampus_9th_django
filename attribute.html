@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- In CSS, you use elem#id and elem.class notation
+  to reach the elements with specified id or class attributes.
+  In Emmet, you can use the very same syntax
+  to add these attributes to specified element:
+
+  div#header+div.page+div#footer.class1.class2.class3
+  -->
+  <div id="header"></div>
+  <div class="page"></div>
+  <div id="footer" class="class1 class2 class3"></div>
+
+  <!--
+  [attr] 표현식(css 같은거)을 이용해서 나만의 엘리먼트를 정의할 수도 있다.
+  td[title="Hello world!" colspan=3]
+  <td colspan="2">Sum: $180</td> 두칸먹는거...
+
+  You can place as many attributes as you like inside square brackets.
+  You don’t have to specify attribute values: td[colspan title] will produce
+  <td colspan="" title=""> with tabstops inside each empty attribute (if your editor supports them).
+  You can use single or double quotes for quoting attribute values.
+  You don’t need to quote values if they don’t contain spaces: td[title=hello colspan=3] will work.
+
+  -->
+  <td title="hello world" colspan="3"></td>
+
+  <!--
+  $의 쓰임새
+  * 하고 같이써서 '수를 셀'수 있다.
+  ul>li.item$*5 하면 item쓰고 1~5까지 해줌.
+  -->
+  <ul>
+    <li class="item1"></li>
+    <li class="item2"></li>
+    <li class="item3"></li>
+    <li class="item4"></li>
+    <li class="item5"></li>
+  </ul>
+
+  <!-- $을 여러개 써서 0으로 패딩 가능.
+  ul>li.item$$$*5 하면 001~005로...
+  -->
+  <ul>
+    <li class="item001"></li>
+    <li class="item002"></li>
+    <li class="item003"></li>
+    <li class="item004"></li>
+    <li class="item005"></li>
+  </ul>
+
+  <!-- @ modifier를 써서 오름차순/내림차순 구별이 가능. 시작값 조정도 가능.
+  ul>li.item$@-*5하면 5~1순으로 ....
+  ul>li.item$@3*5하면 3~8순으로 ....
+  ul>li.item$@-3*5하면 7~3순 ...
+  -->
+  <ul>
+    <li class="item5"></li>
+    <li class="item4"></li>
+    <li class="item3"></li>
+    <li class="item2"></li>
+    <li class="item1"></li>
+  </ul>
+
+  <ul>
+    <li class="item3"></li>
+    <li class="item4"></li>
+    <li class="item5"></li>
+    <li class="item6"></li>
+    <li class="item7"></li>
+  </ul>
+
+  <ul>
+    <li class="item7"></li>
+    <li class="item6"></li>
+    <li class="item5"></li>
+    <li class="item4"></li>
+    <li class="item3"></li>
+  </ul>
+
+</body>
+</html>

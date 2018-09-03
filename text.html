@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- text:{}
+  {}는 엘리먼트에 값을 추가할 수 있다.
+  -->
+  <a href="">click me</a>
+  <!--
+    {text}는 분리된 엘리먼트(div, p) 같은거로 파싱된다. 근데 바로 오른쪽 엘리면트로 쓰이면 또 다른 의미를 가진다.
+    a{click}이나 a>{click}은 똑같은데
+    a{click}+b{here}하고
+    a>{click}+b{here}는 엄연히 다르다.
+  -->
+  <a href="">click</a><b>here</b> <!-- a따로 b따로 -->
+  <a href="">click<b>here</b></a> <!-- here를 anchor안에서 b로 묶음 -->
+
+  <!-- click "here"(하이퍼링크) to continue를 하고싶다면..?
+  p>{click}+a{here}+{ to continue} 로 해야..
+  -->
+  <p>click<a href="">here</a> to continue</p>
+  <!-- > 오퍼레이터가 아니라 이렇게 치면
+  p{Click }+a{here}+{ to continue}
+  개행이 되버림. p따로, a태그 따로, 그 뒤에 텍스트 따로.
+  -->
+  <p>Click </p>
+  <a href="">here</a> to continue
+
+  <!--
+  띄어쓰기는 인식을 못한다.
+  (header > ul.nav > li*5) + footer를 치면 footer만 덜렁나옴ㅋㅋㅋㅋ
+  붙이면 물론 의도하던 대로 나온다.
+  -->
+  (header > ul.nav > li*5) + <footer></footer>
+  <header>
+    <ul class="nav">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </header>
+  <footer></footer>
+</body>
+</html>
