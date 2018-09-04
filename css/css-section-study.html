@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/new-list.css">
+    <style>
+
+    </style>
+    <title></title>
+</head>
+<body>
+    <section class="descendent">
+        <ul>
+            <li>Chapter1</li>
+            <li>Chapter2</li>
+            <li>Chapter3</li>
+            <ul>
+                <li>sub chapter1</li>
+                <li>sub chapter2</li>
+            </ul>
+        </ul>
+    </section>
+
+    <!-- section[class=child]>tr>li{Chapter$}*3+tr>li{Chapter$}*2 -->
+    <section class="child">
+      <ul>
+        <li>챕터1</li>
+        <li>챕터2</li>
+        <li>챕터3</li>
+        <ul>
+          <li>서브챕터1</li>
+          <li>서브챕터2</li>
+        </ul>
+      </ul>
+    </section>
+</body>
+</html>

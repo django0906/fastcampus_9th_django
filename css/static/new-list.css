@@ -1,0 +1,11 @@
+section {
+  border: 5px solid red;
+}
+
+section.descendent ul {
+  border: 1px solid black;
+}
+
+section.child > ul {
+  border: 2px solid blue
+}

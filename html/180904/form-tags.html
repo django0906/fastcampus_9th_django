@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<h1>form tags</h1>
+<h2>input tags</h2>
+<form action="">
+  <div><input type="text" name="username">
+
+  </div>
+    <div><input type="password" name="password">
+
+  </div>
+    <!-- ctrl+w 누르면 한번에 태그 묶어줌.
+      <input type="radio" id="radio">에 ctrl+w 하고 p만 치면
+      <p><input type="radio" id="radio">
+  </p>로 묶어줌
+      -->
+    <!--
+      cmd+d 여러번 누르면 태그가 일괄선택된다.
+      p 처럼 한글자짜리는 뒤의 정보를 갖고오는게 낫다.
+      -->
+    <!-- 주석 단축키는 cmd+/ -->
+    <div><input type="radio" name="radio">
+
+  </div>
+    <div><input type="checkbox" name="checkbox">
+
+  </div>
+    <div>
+      <input type="button">
+
+      </div>
+    <div><input type="file" name="file">
+
+  </div>
+    <div><input type="submit">
+
+  </div>
+    <div><input type="reset">
+
+  </div>
+    <div>
+      <input type="hidden" name="hidden" value="l4in_rocks!">
+      <!-- 서버에 전송해주는 값들. POST로 하면 패킷을 들여다봐야 보인다. -->
+    </div>
+    <!-- div로 넣어주는 형태로 데이터를 작성해야 깔끔하다! -->
+
+  <hr>
+  <h2>hello</h2>
+  <form action="">
+    <div> disabled values<input type="text" value="disabled" disabled></input> </div>
+    <div> read only values<input type="text" value="readonly" readonly></input> </div>
+    <div> placeholder values...
+      아마도 그냥 뭔가 값을 입력하거나 하는 것일듯 싶다.
+      <input type="text" placeholder="must type any value"></input>
+    </div>
+    <div> <input type="text" size="30"></input> </div>
+    <div> <input type="text" maxlength="10"></input> </div>
+    <div> <input type="checkbox" checked>checked</input> </div>
+    <div> <input type="text" id="radio1" name="agree" value="check1"></input> </div>
+    <div> <input type="text" id="radio2" name="agree" value="check2"></input> </div>
+  </form>
+
+  <hr>
+  <h2>label related tests</h2>
+
+  <!-- 둘 다 label로 묶을 수는 있지만 for문을 사용해서
+  명시적으로 소스를 작성하는 것이 훨씬 깔끔하다. -->
+
+  <form action="">
+    <label>ID <input type="checkbox"> </label>
+    </input>
+  </form>
+  <form action="">
+    <label for="second">ID</label>
+    <input type="checkbox" id=second>
+  </form>
+
+  <!-- select>option[value=$]*5 -->
+  <select name="" id="">
+    <option value="1"></option>
+    <option value="2"></option>
+    <option value="3"></option>
+    <option value="4"></option>
+    <option value="5"></option>
+  </select>
+
+  <!-- select[name=number id=select-id]>option[value=$]*5 -->
+  <select name="number" id="select-id1">
+    <option value="1"></option>
+    <option value="2"></option>
+    <option value="3"></option>
+    <option value="4"></option>
+    <option value="5"></option>
+  </select>
+
+  <!-- form 액션에 submit까지 한번에 -->
+
+  <form action="">
+    <select name="number" id="select-id2">
+      <option value="1">1st</option>
+      <option value="2">2nd</option>
+      <option value="3">3rd</option>
+      <option value="4">4th</option>
+      <option value="5">5th</option>
+    </select>
+      <input type="submit" value="submit">
+      <!-- 서버에는 value만 날아간다. -->
+  </form>
+
+  <hr>
+
+  <!-- 여러개 선택하는 건 아무 의미가 없는 짓이긴 함 -->
+  <form action="">
+    <select name="multiple" multiple>
+      <option value="a">a</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+    </select>
+  </form>
+
+  <form action="">
+    <select name="" id="">
+      <option value="" name=""></option>
+      <option value="" name=""></option>
+      <option value="" name=""></option>
+    </select>
+  </form>
+
+  <select>
+
+  <optgroup label="Fruits">
+
+    <option value="apple">Apple</option>
+     <option value="banana">Banana</option>  <option value="orange">Orange</option>
+
+    </optgroup>
+
+    <optgroup label="Colors">
+
+    <option value="red">Red</option>
+     <option value="blue">Blue</option>  <option value="green">Green</option>
+
+  </optgroup>
+  </select>
+
+  <!-- button에 대해 자세히 보기 위해선 아래 링크를 참조:
+  https://www.w3schools.com/tags/tag_button.asp
+  -->
+  <hr>
+  <form action="">
+    <button type="submit">submit test</button>
+    <button type="reset">reset test</button>
+    <button type="button"></button>
+  </form>
+
+  <hr>
+  <h3>field set</h3>
+  <form action="">
+    <fieldset>
+      <legend>Login</legend>
+      <label>user name<input type="text"></label>
+      <label>password<input type="text"></label>
+    </fieldset>
+  </form>
+
+</body>
+</html>

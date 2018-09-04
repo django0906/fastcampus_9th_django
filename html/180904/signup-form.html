@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <fieldset>
+    <legend>기본정보</legend>
+      <form class="" action="index.html" method="post">
+        <div>
+          <label for="value-id">ID </label>
+          <input type="text" placeholder="아이디 입력" id="value-id"> <br>
+        </div>
+        <div>
+          <br><label for="value-password">비밀번호 </label>
+          <input type="password" placeholder="비밀번호 입력" id=value-password></br>
+        </div>
+        <div>
+          <br><label for="value-email">이메일</label>
+          <input type="email" id=value-email></br>
+        </div>
+        <div><br>성별
+          <select name="gender" id="select-gender">
+            <option value="male">남성</option>
+            <option value="female">여성</option>
+            <option value="private">비공개</option>
+          </select>
+        </br></div>
+      </form>
+  </fieldset>
+
+  <p></p>
+
+  <fieldset>
+    <legend>선택정보</legend>
+      <div>나이<input type="number"><br></div>
+      <div><br>주소<input type="text"></br></div>
+      <div><br>자기소개<p><textarea placeholder="입력하세요" name="textarea" cols="40" rows="10">
+        </textarea></div>
+  </fieldset>
+
+  <div>
+    <button type="submit">회원가입</button>
+    <button type="reset">입력값 초기화</button>
+  </div>
+
+</body>
+</html>

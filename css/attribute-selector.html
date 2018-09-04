@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style> 
+        * {
+            display: black;
+            font-size: 14px;
+            color: magenta;
+        }   
+        a[href="http://www.facebook.com"] {
+            font-size: 41px;
+            color: red;
+        }
+        a[href*="google"] {
+            font-size: 25px;
+            color: cyan;
+        }
+        a:hover {
+            font-size: 88px;
+            color: white;
+        }
+        <!-- 적용되는 옵션이 우선된다  -->
+    </style>
+</head>
+<body>
+    <a href="http://www.google.com">Google</a>
+    <a href="http://www.instagram.com">Instagram</a>
+    <a href="http://www.facebook.com">Facebook</a>
+    <a href="http://www.pinterest.com">Pinterest</a>
+</body>
+</html>
