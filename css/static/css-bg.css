@@ -1,0 +1,25 @@
+div {
+  width: 400px; height: 400px;
+  border: 3px solid black;
+  background-image: url(pikachu.png);
+  background-position: center;
+
+  overflow: auto; /* 요소가 배경보다 길면 스크롤을 하도록 만듦 */
+  background-repeat: no-repeat; /* 피카츄가 반복 안되게 함 */
+}
+
+/* 배경이 기본 속성따라서 어디 고정적으로 위치함 */
+.bg1 {
+  background-attachment: local;
+}
+
+/* 배경이 스크롤따라서 나옴 */
+.bg2 {
+  background-attachment: scroll;
+}
+
+/*  배경이 브라우저 화면 중앙에 고정되어있음
+    브라우저 크기 따라서 중앙이 바뀜 */
+.bg3 {
+  background-attachment: fixed;
+}
