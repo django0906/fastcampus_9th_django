@@ -38,19 +38,33 @@ img {
   text-align: right;
 }
 
-ul.horizontal {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
+/* 분류는 여기서부터 */
 .type {
   border: 1px solid #ccc;
   padding: 3px;
   padding-left: 5px;
   margin-bottom: 2em;
   border-radius: 4px;
+}
+
+.category {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  font-size: inherit;
+  display: inline-block;
+}
+
+.category::after {
+  content: ':';
+}
+
+ul.horizontal {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 /* horizontal 아래의 li는 태그니까 이렇게 해야 적용된다. */
@@ -69,20 +83,30 @@ ul.horizontal li:after {
 ul.horizontal li:last-of-type:after {
   display: none;
 }
+/* 분류의 끝 */
 
-div.document-link > ul {
+.document-link img.arrow {
+  width: 21px;
+}
+
+.document-link > ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-div.document-link * {
+.document-link * {
   vertical-align: middle;
+}
+
+.wiki-table {
+  border: 2px solid #b38b6e;
+  border-collapse: collapse;
 }
 
 .wiki-table-container {
   /* w600[tab] */
-  width: 600px;
+  width: 500px;
   margin: 0 auto;
 }
 
@@ -93,35 +117,25 @@ div.document-link * {
   white-space: pre-line;
 }
 
-.wiki-table {
-  border: 2px solid #b38b6e;
-  border-collapse: collapse;
-}
-
-.wiki-table-container > table.wiki-table tr > td:first-of-type {
-  background-color: #B38B6E;
+.wiki-table-container > table.wiki-table tr {
+  background-color: #980000;
   color: white;
 }
 
-/* 테이블 중 첫 번째 tr(이미지에 해당) */
-.wiki-table-container > table.wiki-table tr:first-of-type > td {
-  /* inherit
-  새로 지정한 값이 있다면, 적용을 무시하고
-  부모로 부터 원래 상속받던 값 (또는 기본값)을 사용 */
-  background-color: inherit;
-  /* 이미지 아래의 공백을 없애기 위해 line-height조절 */
-  line-height: 0;
+.wiki-table-container > table.wiki-table tbody.reboot_series > tr {
+  background-color: #000000;
+  color: white;
 }
 
-.reference {
-  vertical-align: super;
-  font-dize: 0.5em;
+.wiki-table-container-right {
+  width: 325px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  float: right;
+  text-align: center;
 }
 
-#images {
-  width: 100%;
-}
-
+/* TOC 요소들 */
 #toc_container {
     background: none repeat scroll 0 0;
     border: 1px solid #aaa;
@@ -141,6 +155,7 @@ div.document-link * {
     list-style: outside none none !important;
 }
 
+/* blockquote에 대해 클래스 및 속성 적용 */
 .wiki-quote {
   padding: 1em calc(2em + 25px) 1em 1em;
   margin: 1em 0;

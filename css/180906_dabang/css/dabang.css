@@ -1,0 +1,53 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+
+      font-family:
+      'Nanum Gothic','Malgun Gothic','돋움',
+      Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
+}
+
+header.main-header {
+  height: 61px;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.left {
+  display: inline-block;
+  float: left;
+  margin: 0;
+  padding-left: 0;
+}
+
+ul.left > a {
+  vertical-align: top;
+  display: inline-block;
+  width: 84px;
+  height: 40px;
+  min-height: 28px;
+  background-repeat: no-repeat;
+  margin-top: 16px;
+  margin-left: 20px;
+}
+
+ul.right {
+  float: right;
+  height: 61px;
+}
+
+ul.right > li {
+  display: inline-block;
+  float: left;
+  line-height: 60px;
+  padding: 3px;
+  margin: 7px;
+}
+
+.container.main-image {
+}

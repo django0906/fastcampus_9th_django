@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  /* 이 요소를 가지고 자식이 무슨 값이면, 무엇무엇을 하자 하고
+  자식이 float인 요소에 대해서 저런 식으로 작성할 수 있다. */
+  /* 다시말해, float인 (이하 소스코드 참조) */
+  .clearfix::after {
+    content: 'abcd';
+    display: block;
+    height: 0;
+    clear: both;
+  }
+
+  .float-frame1 .float-frame2 {
+    width: 300px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  .float-unit {
+    width: 50px;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 0;
+    margin-right: 5px;
+    float: left;
+  }
+  </style>
+</head>
+<body>
+  <div class="float-frame clearfix">
+    <div class="float-unit">A</div>
+    <div class="float-unit">B</div>
+    <div class="float-unit">C</div>
+    <div class="float-unit">D</div>
+    <br style="clear: both"> <!-- 이 태그를 통해 빈 칸도 채워졌다! -->
+    <!-- ::after selector를 사용해서도 가능하다. -->
+  </div>
+
+  <div class="float-frame clearfix">
+    <div class="float-unit">A</div>
+    <div class="float-unit">B</div>
+    <div class="float-unit">C</div>
+    <div class="float-unit">D</div>
+    <br style="clear: both">
+  </div>
+</body>
+</html>

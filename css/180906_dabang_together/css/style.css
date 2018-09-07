@@ -1,0 +1,76 @@
+@charset "UTF-8";
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+
+/* 메인헤더 네비게이션의 메뉴들에서 기본 스타일 삭제.
+가로정렬 된 값들에 대해 범용성 있는 소스코드
+*/
+.horizontal {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.horizontal > * {
+  float: left;
+}
+
+.horizontal .clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+header.main-header {
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+}
+
+header.main-header > nav > ul.left {
+  float: left;
+}
+
+header.main-header > nav > ul.left > li:first-of-type {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+header.main-header > nav > .right {
+  float: right;
+}
+
+header.main-header > nav > .right ul > li > a {
+  color: #585858;
+  text-decoration: none;
+  /* 상하는 0 좌우는 각각 3,7 을 의미... 클릭이 되냐/안되냐 하는 영역 설정 */
+  padding: 0 3px;
+  margin: 0 7px;
+}
+
+header.main-header > nav > .right .room-list {
+  font-size: 14px;
+}
+
+header.main-header > nav > .right .auth-list {
+  font-size: 12px;
+}
+
+header.main-header > nav ul > li > a {
+  display: inline-block;
+  line-height: 60px;
+  height: 60px;
+}
+
+header.main-header > nav ul > li > a img {
+  vertical-align: middle;
+}
+
+header.search-container {
+  position: relative;
+  height: 678px;
+  background-image: url("../images/MainSearch-img-2018.png");
+}
