@@ -147,11 +147,11 @@ section.theme-search .theme-header p.subtitle {
 
 section.theme-search .theme-contents {
   width: 960px;
+  padding-bottom: 810px;
   margin: 0 auto;
-  background-color: #ddd;
 }
 
-section.theme-search .theme-contents > * {
+section.theme-search .theme-contents * {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -231,4 +231,29 @@ section.theme-search .theme-contents > ul > li > .typo > hr {
 
 section.theme-search .theme-contents > ul > li > .typo > h3 {
   font-size: 24px;
+}
+
+section.theme-search .visual-banner * {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+section.theme-search .visual-banner > ul > li {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 100px;
+}
+
+section.theme-search .visual-banner > ul > li > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+section.theme-search .visual-banner > ul > li.banner-img {
+  background-image: url("images/banner-img.jpeg");
 }

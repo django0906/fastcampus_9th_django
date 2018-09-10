@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="scss/style.css">
+  <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
   <div id="wrap">
@@ -32,15 +32,95 @@
       </nav>
       <div class="search-container">
         <div class="search-bottom">
-          <form action="">
+          <form action="" method="post" class="clearfix">
             <input type="text" placeholder="관심지역 또는 매물번호를 검색해보세요">
-            <button type="submit" value="방 검색"></button>
+            <button type="submit">방 검색</button>
           </form>
         </div>
       </div>
-
     </header>
-  </div>
 
+    <section class="theme-search">
+      <div class="theme-header">
+        <h2>테마 검색</h2>
+        <p class="subtitle">다방의 다양한 검색조건으로 방을 찾아보세요.</p>
+      </div>
+
+      <div class="theme-contents clearfix">
+        <ul class="contents-wrap">
+          <!--
+            position: absolute;
+
+            요소의 크기 변경
+            transform: scale();
+          -->
+
+          <li>
+            <div class="bg pet"></div>
+            <div class="mask"></div>
+            <div class="typo">
+              <h3>반려동물</h3>
+              <hr></hr>
+              <p>반려동물과 함께 살 수 있는 방 찾아보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="bg guarantee"></div>
+            <div class="mask"></div>
+            <div class="typo">
+              <h3>저보증금</h3>
+              <hr>
+              <p>보증금 300만원 이하인 방 찾아보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="bg pano"></div>
+            <div class="mask"></div>
+            <div class="typo">
+              <h3>360도 매물</h3>
+              <hr></hr>
+              <p>3D 이미지로 더 자세히 볼 수 있는 방 찾아보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="bg parking"></div>
+            <div class="mask"></div>
+            <div class="typo">
+              <h3>주차가능</h3>
+              <hr></hr>
+              <p>주차공간이 확보된 방 찾아보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="bg direct"></div>
+            <div class="mask"></div>
+            <div class="typo">
+              <h3>직거래매물</h3>
+              <hr></hr>
+              <p>중개수수료 없는 직거래 매물 찾아보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="bg officetel"></div>
+            <div class="mask"></div>
+            <div class="typo">
+              <h3>오피스텔</h3>
+              <hr></hr>
+              <p>깨끗하고 편리한 주거용 오피스텔 찾아보기</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="visual-banner">
+        <ul class="visual-banner-details">
+          <li>
+            <div class="banner-img"></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
 </body>
 </html>

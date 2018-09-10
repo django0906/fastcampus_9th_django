@@ -1,12 +1,35 @@
 // 180906_dabang_together/scss/style.scss
+
+
+
+// 메인이미지 관련
 $search-container-height: 678px;
+$MainSearch-img-2018-location: "../images/MainSearch-img-2018.png";
 $color-image: #ebe6e0;
+
+// 검색 UI 관련변수
+$width-search-form-input: 434px;
+$width-search-form-button: 100px;
+
+$height-search-bottom: 110px;
+$height-search-form-elements: 50px;
+
+$margin-top-search-form: ($height-search-bottom - $height-search-form-elements) / 2;
+
+$search-button-bg-color: #3b8de0;
+$search-button-bg-hover-color: #2074c8;
+
+// contents 경로설정
+$contents-path: "../images/";
 
 body,
 html {
   padding: 0;
   margin: 0;
   font-size: 13px;
+  font-family: "Open Sans", arial, 'Apple SD Gothic Neo', 'Noto Sans CJK KR',
+  '본고딕', 'KoPubDotum Medium', '나눔바른고딕', '나눔고딕', 'NanumGothic',
+  '맑은고딕', 'Malgun Gothic', sans-serif;
 }
 /* 메인헤더 네비게이션의 메뉴들에서 기본 스타일 삭제.
 가로정렬 된 값들에 대해 범용성 있는 소스코드
@@ -22,8 +45,16 @@ html {
 }
 
 header.main-header {
-  height: 60px;
   border-bottom: 1px solid #ccc;
+
+  // after 가상선택자를 만들어서 float가 가지지 못한 높이값을 지니게 만듦.
+  .clearfix {
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
 
   > nav {
     > ul.left {
@@ -67,29 +98,205 @@ header.main-header {
       }
     }
   }
-  .clearfix {
-    &:after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-  }
+
 }
 
 .search-container {
+  position: relative;
   height: $search-container-height;
-  background-image: url("../images/MainSearch-img-2018.png");
+  background-image: url($MainSearch-img-2018-location);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   background-color: $color-image;
 
-  > .search-bottom {
+  .search-bottom {
     position: absolute;
     left: 0;
+    bottom: 0;
     width: 100%;
     height: 110px;
-    bottom: 0px;
     background-color: rgba(0,0,0,0.6);
+
+    > form {
+      width: $width-search-form-button + $width-search-form-input;
+      margin: $margin-top-search-form auto;
+
+      > * {
+        float: left;
+        height: $height-search-form-elements;
+        box-sizing: border-box;
+      }
+
+      > input {
+        width: $width-search-form-input;
+        padding: 0 20px;
+        border: none;
+        border-radius: 3px 0 0 3px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        font-size: 14px;
+        line-height: $height-search-form-elements;
+      }
+
+      > button {
+        width: $width-search-form-button;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        font-size: 10px;
+        color: white;
+        background-color: $search-button-bg-color;
+        cursor: pointer;
+        transition-duration: 0.1s;
+
+        &:hover {
+          background-color: $search-button-bg-hover-color;
+        }
+      }
+    }
+  }
+}
+
+section.theme-search {
+  width: 100%;
+
+  .theme-header {
+    width: 960px;
+    margin: 71px auto 30px;  // 상 70 좌 오토 하 30 우 오토
+    text-align: center;
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 3px;
+    }
+
+    p.subtitle {
+      margin-top: 5px;
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+  }
+
+  .theme-contents {
+    width: 960px;
+    // height 설정을 직접 줬다.. (660 + 150)
+    padding-bottom: 810px;
+    margin: 0 auto;  // equals to 0 auto 0 auto;
+
+    * {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    > ul {
+
+      > li {
+        position: relative;
+        float: left;
+        width: 300px; height: 300px;
+        // border: 1px solid black;
+        box-sizing: border-box;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        overflow: hidden;
+
+        // https://www.w3schools.com/cssref/sel_nth-of-type.asp
+        &:nth-of-type(3n) {
+          margin-right: 0;
+        }
+
+        // hover 이벤트가 들어왔을 때?
+        &:hover {
+          > .bg {
+            transform: scale(1.2);
+          }
+        }
+
+        // li의 모든 자식요소들(.bg, .mask, .typo)은
+        // left, top각각 0을 기준으로 부모에게 겹치도록 배열.
+        & > * {
+          position: absolute;
+          left: 0; top: 0;
+          width: 100%; // 너비가 사라짐
+          height: 100%;
+        }
+
+        & > .bg {
+          transition-duration: 0.3s;
+
+          &.pet {
+            background-image: url($contents-path+"pet.jpg");
+          }
+          &.guarantee {
+            background-image: url($contents-path+"guarantee.jpg");
+          }
+          &.pano {
+            background-image: url($contents-path+"pano.jpg");
+          }
+          &.parking {
+            background-image: url($contents-path+"parking.jpg");
+          }
+          &.direct {
+            background-image: url($contents-path+"direct.jpg");
+          }
+          &.officetel {
+            background-image: url($contents-path+"officetel.jpg");
+          }
+        }
+
+        & > .mask {
+          background-color: #2a2a2a;
+          opacity: .4;
+        }
+
+        & > .typo {
+          color: white;
+          height: auto;
+          top: 50%;
+          transform: translateY(-50%);
+          text-align: center;
+
+          & > hr {
+            width: 46px;
+          }
+
+          & > h3 {
+            font-size: 24px;
+          }
+
+        }
+
+      }
+    }
+  }
+
+  .visual-banner {
+    // 이거 높이는 "우선" padding-bottom 으로 줬다.
+    // 굉장히 비효율적일 것 같으니 질문 필수.
+
+    * {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    > ul {
+
+      > li {
+        position: relative;
+        float: left;
+        width: 100%; height: 100px;
+
+        > * {
+          position: absolute;
+          left: 0; top: 0;
+          width: 100%; height: 100%;
+        }
+
+          &.banner-img {
+            background-image: url("images/banner-img.jpeg");
+        }
+      }
+    }
   }
 }
